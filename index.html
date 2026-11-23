@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HNSHU BHAI SENSITIVITY</title>
+<style>
+body{
+background:#090d19;
+color:white;
+font-family:Arial;
+text-align:center;
+padding:20px;
+}
+h1{color:#ffb000}
+.box{
+background:#19233b;
+padding:22px;
+border-radius:15px;
+margin:15px auto;
+max-width:450px;
+}
+select,input{
+width:90%;
+padding:13px;
+margin:10px;
+border-radius:8px;
+background:#10182b;
+color:white;
+border:1px solid #555;
+}
+button{
+background:#ffb000;
+padding:14px 25px;
+border:0;
+border-radius:8px;
+font-weight:bold;
+}
+.result{
+color:#54e5ff;
+font-size:22px;
+line-height:2;
+}
+</style>
+</head>
+<body>
+
+<h1>🔥 HNSHU BHAI 🔥</h1>
+<h2>FREE FIRE SENSITIVITY</h2>
+<p>YOUR PERSONAL SENSITIVITY GENERATOR</p>
+
+<div class="box">
+<h3>SELECT YOUR PHONE</h3>
+
+<select id="phone">
+<option>Motorola</option>
+<option>Samsung</option>
+<option>Redmi</option>
+<option>Poco</option>
+<option>Realme</option>
+<option>Vivo</option>
+<option>Oppo</option>
+<option>OnePlus</option>
+<option>iPhone</option>
+<option>Other</option>
+</select>
+
+<input id="model" placeholder="Enter Phone Model">
+
+<select id="ram">
+<option value="150">3GB RAM</option>
+<option value="160">4GB RAM</option>
+<option value="170" selected>6GB RAM</option>
+<option value="178">8GB RAM</option>
+<option value="185">12GB RAM</option>
+</select>
+
+<select id="style">
+<option value="0">Balanced</option>
+<option value="10">Rush Gameplay</option>
+<option value="-8">Steady Aim</option>
+</select>
+
+<br>
+<button onclick="generate()">GENERATE SENSITIVITY</button>
+
+<div class="result" id="result">
+Your Sensitivity Will Appear Here
+</div>
+
+<button onclick="copy()">COPY SENSITIVITY</button>
+</div>
+
+<div class="box">
+<h2>⭐ PREMIUM</h2>
+<p>Special Device Presets</p>
+<p>Custom Sensitivity</p>
+<p>Advanced Settings Guide</p>
+<p>HNSHU BHAI PREMIUM</p>
+</div>
+
+<p>© 2026 HNSHU BHAI</p>
+<p>Official Personal Website</p>
+
+<script>
+let values=[];
+
+function generate(){
+let b=Number(document.getElementById("ram").value);
+let s=Number(document.getElementById("style").value);
+
+values=[
+Math.min(200,b+s),
+Math.min(200,b-8+s),
+Math.min(200,b-18+s),
+Math.min(200,b-29+s),
+Math.min(200,b-55+s),
+Math.min(200,b-22)
+];
+
+let names=["General","Red Dot","2X Scope","4X Scope","Sniper Scope","Free Look"];
+
+document.getElementById("result").innerHTML=
+names.map((n,i)=>n+": "+values[i]).join("<br>");
+}
+
+function copy(){
+if(values.length===0){
+alert("Generate Sensitivity First");
+return;
+}
+navigator.clipboard.writeText(
+["General","Red Dot","2X Scope","4X Scope","Sniper Scope","Free Look"]
+.map((n,i)=>n+": "+values[i]).join("\n")
+).then(()=>alert("Copied!"));
+}
+</script>
+
+</body>
+</html>
